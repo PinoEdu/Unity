@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ControlJugador : MonoBehaviour
 {
+    public float Velocidad = 200.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +17,6 @@ public class ControlJugador : MonoBehaviour
     {
         //Mover la furgoneta hacia delante
         // transform.Translate(0, 0, 1);
-        transform.Translate(Vector3.forward * Time.deltaTime * 15);
+        transform.Translate(Vector3.forward * Time.deltaTime * Velocidad);
     }
 }
