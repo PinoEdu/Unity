@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ControlJugador : MonoBehaviour
 {
-    public float velocidad = 20.0f;
-    public float velocidadGiro = 5;
-    public float controlHorizontal;
-    public float controlAvance;
+    float velocidad = 20.0f;
+    float velocidadGiro = 30;
+    float controlHorizontal;
+    float controlAvance;
 
     // Start is called before the first frame update
     void Start()
@@ -18,11 +18,13 @@ public class ControlJugador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Leemos el sistema de entrada
         controlHorizontal = Input.GetAxis("Horizontal");
         controlAvance = Input.GetAxis("Vertical");
-        //Mover la furgoneta hacia delante
-        // transform.Translate(0, 0, 1);
+
+        // Control de avance
         transform.Translate(Vector3.forward * Time.deltaTime * velocidad * controlAvance);
-        transform.Translate(Vector3.right * Time.deltaTime * velocidadGiro * controlHorizontal);
+        // Control de giro
+        transform.Rotate(Vector3.up, Time.deltaTime * velocidadGiro * controlHorizontal);
     }
 }

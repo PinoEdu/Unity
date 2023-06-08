@@ -512,8 +512,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 20
-  velocidadGiro: 5
+  velocidadGiro: 10
   controlHorizontal: 0
+  controlAvance: 0
 --- !u!54 &129359690
 Rigidbody:
   m_ObjectHideFlags: 0
